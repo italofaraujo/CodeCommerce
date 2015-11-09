@@ -12,5 +12,10 @@
 */
 
 Route::get('/', 'WelcomeController@index');
-Route::get('admin/categories','AdminCategoriesController@index');
-Route::get('admin/products','AdminProductsController@index');
+
+Route::group(['prefix'=>'admin'],function(){
+    Route::get('categories',['as'=>'admin-categories','uses' =>'AdminCategoriesController@index']);
+    Route::get('products',['as'=>'admin-products','uses' =>'AdminProductsController@index']);
+});
+
+
