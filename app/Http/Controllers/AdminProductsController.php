@@ -17,4 +17,10 @@ class AdminProductsController extends Controller{
         return view('products', compact('products'));
     }
 
+
+
+    public function show($id){
+        $product =  $this->products->find($id);
+        echo $product->name;
+    }
 }

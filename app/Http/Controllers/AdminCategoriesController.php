@@ -17,4 +17,9 @@ class AdminCategoriesController extends Controller{
         return view('categories',compact('categories'));
     }
 
+    public function show($id){
+        $categories =  $this->categories->find($id);
+        echo $categories->name;
+    }
+    
 }
